@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta lang="en">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1, minimum-scale=1">
+	<title>The Real Form Validator</title>
+     <style type="text/css">
+     	.form{
+     		position: absolute;
+     		float :left;
+     		width: 80%;
+     		height: 1400px;
+     		padding: 0px 40px 70px 50px;
+     		border-style: groove; 
+	  		border-color:magenta;
+			border-width: 10px;
+     		border-radius: 7px;
+     		font-size: 20px;
+     		background-color:lightyellow;
+     		font-family: cursive;
+            
+
+     	
+     		
+     	}
+     	#frm input[type="text"],input[type='password'],textarea{
+     		width: 35%;
+            height: 25px;
+            margin: 10px;
+            border-style:outset; 
+	  		border-color:grey;
+			border-width: 3px;
+     		border-radius: 0px;
+     		font-size:20px;
+     		box-shadow: 4px 4px  2px grey;
+     		overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+     	.logo{
+     		text-align: center;
+     		position: absolute;
+     		right:0%;
+     		width: 100%;
+     		background-color: lavender;
+     		border-bottom: double red 10px; 
+            text-shadow: 2px 2px  5px red;
+     	}
+     	.button{
+     		width:23%;
+     		height: 30px;
+     		background-color: lime;
+     		border-style: inset;
+     		border-width: 1px;
+     		border-radius: 1px;
+     		border-color: red;
+     		font-size: 15px;
+     		box-shadow: 2px 2px  black;
+     		margin-bottom: 25px;
+
+     	}
+     	.button:hover{
+            background-color:red;
+            border-style: groove;
+     		border-width: 2px;
+     		border-radius: 1px;
+     		border-color: lime;
+     		font-size: 17px;
+     		color: white;
+     		box-shadow: 2px 2px 1px cyan;
+
+     	}
+     </style>
+     
+</head>
+<body >
+	<div class="form" align="left">
+		<div class="logo" align="right">
+			<h1><B>Enter Details !</B></h1>
+		</div><br><br><br><br><br><br><br>
+		<form id="frm"  name="form"  method="post"  action="/aman"  onsubmit="return validate()" autocomplete="off">
+	<div>
+		<label style="padding: 20px;">First Name<span style="color: red; ">*</span></label>
+		<input type="text" id="fname"  name="fname"  onfocus="onf(this)"  value="Aman" onblur="onb(this)"><br>
+		<small id="1" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	</div><br>
+	<div>
+	<label style="padding: 20px;">Last Name</label>
+	<input type="text" id="lname" name="lname" onfocus="onf(this)" onblur="onb(this)" ><br>
+   </div><br>
+   <div>
+		<label style="padding: 20px;">Mobile Number<span style="color: red; ">*</span></label><br><br>
+		<div style="margin-left: 50px;"><select>
+			<option>+91</option>
+			<option>+81</option>
+			<option>+51</option>
+		</select>
+		<input type="text" id="Phone" name="Phone"  onfocus="onf(this)" onblur="onb(this)" value="8824643330"><br>
+		<small id="2" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	  </div>
+	</div><br>
+   <div>
+   	<label style="padding: 20px;">Age<span style="color: red;">*</span></label>
+   	<input type="text" id="age" name="age" onfocus="onf(this)" onblur="onb(this)" value="20"><br>
+   <small id="3" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	  
+   </div><br>
+    <div>
+   	<label style="padding: 10px;">Gender<span style="color: red;">*</span></label>
+   
+   	<input type="radio" id="Male" name="Gender"><label for="Male">Male</label>
+    <input type="radio" id="Female" name="Gender"><label for="Female">Female</label>
+    <input type="radio" id="Other" name="Gender"><label for="Other">Other</label><br>
+    <small id="4" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	
+    </div><br>
+    <div>
+    	<label> Select your favourite color:</label><br>
+    	<select name="color">
+    		<option>Red</option>
+    		<option>Green</option>
+    		<option>Yellow</option>
+    		<option>Blue</option>
+    	</select>
+    </div><br>
+    <div>
+   	<label style="padding: 20px;">Email Address<span style="color: red;">*</span></label>
+   	<input type="text" id="email" name="email" onfocus="onf(this)" onblur="onb(this)" value="somaniaman2000@gmail.com"><br>
+     <small id="5" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	
+   </div><br>
+    <div>
+    	<label style="padding: 20px;">Password<span style="color: red;">*</span></label><small id="1" style="color: red;"></small>
+    	<input type="Password" id="Password" name="password" onfocus="onf(this)" onblur="onb(this)"><br>
+    	 <small id="6" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	
+    </div><br>
+    <div>
+    	<label style="padding: 20px;">Confirm Password<span style="color: red;">*</span></label><small id="1" style="color: red;"></small>
+    	<input type="Password" id="Confirm Password" onfocus="onf(this)" onblur="onb(this)"><br>
+    	<small id="7" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	
+    </div><br>
+    <div>
+    	<label style="padding: 20px;">Address<span style="color: red;">*</span></label><br><small id="1" style="color: red;"></small>
+    	<textarea id="Address" name="address" onfocus="onf(this)" onblur="onb(this)"></textarea><br>
+    	<small id="8" style="color: red; font-weight: bold; padding-left: 20px;"></small>
+	
+    </div><br>
+    <label>Upload your Image here </label><input type="file">
+    <br><br>
+    <div>
+    	<button name="submit" class="button">Submit</button>
+    	<button  type="reset" name="reset" style="float: right;" onclick="frmreset()" class="button">Reset Form</button>
+    </div>
+</form>
+	</div>
+
+</body>
+<script type="text/javascript">
+     	/*function strt() {
+     		alert("Welcome to form filling process");
+     	}*/
+
+     	function onf(x){
+     		x.style.background="azure";
+     	}
+     	function onb(y){
+     		y.style.background="lavender";
+     	}
+
+     	function frmreset(){
+     		document.getElementById("frm").reset();
+     	}
+     	
+     	function validate(){
+              
+              var a=/\D/;
+              var b=document.getElementById("fname").value;
+              if(document.getElementById("fname").value=="" || document.getElementById("fname").value=="null"
+              	|| b.length<2)
+              {
+                 document.getElementById("1").innerHTML="**Name should be 2 to 5 characters long";
+              	return false;
+              }
+              if(a.test(b)==false)	{
+                document.getElementById("1").innerHTML="**Enter alphabets only";
+                return false;
+              }
+              
+         
+
+              var c=/^[6789]\d{9}$/;
+              var d=document.getElementById("Phone").value;
+              if(c.test(d)==false){
+              	document.getElementById("2").innerHTML="**Invalid Mobile Number";
+                   return false;
+              }
+
+              var e=document.getElementById("age").value;
+              if(e<=0 || isNaN(e)==true || e==""){
+              	document.getElementById("3").innerHTML="**Enter correct age";
+                   return false;
+              }
+
+              var f=document.forms["form"].elements["Gender"].value;
+              if(f=="null" || f==""){
+                  document.getElementById("4").innerHTML="**Please Select your Gender";
+                   return false;
+              }
+
+              var g=document.getElementById("email").value;
+              var atpos= g.indexOf("@");
+              var dotpos= g.lastIndexOf(".");
+              if(atpos<1 ||atpos+2>=dotpos || dotpos+2>=g.length){
+                 document.getElementById("5").innerHTML="**Invalid Email Address";
+               return false;
+            	}
+              
+              var h=document.getElementById("Password").value;
+              if(h==""){
+              	document.getElementById("6").innerHTML="**Please enter your Password";
+               return false;
+              }
+              if(h.length<8 && h.length>0){
+              	document.getElementById("6").innerHTML="**Password is too short";
+               return false;
+            	
+              }	
+
+              var i=document.getElementById("Confirm Password").value;
+              if(h!=i){
+                 document.getElementById("7").innerHTML="**Passwords aren't matching";
+               return false;
+              }
+
+              var j=document.getElementById("Address").value;
+              if(j=="" || j=="null"){
+                 document.getElementById("8").innerHTML="**Please enter your residential Address";
+               return false;
+              
+              }
+              
+     	}
+     </script>
+</html>
